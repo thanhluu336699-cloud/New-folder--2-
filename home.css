@@ -1,0 +1,314 @@
+/* --- BASE STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+}
+
+/* --- MOBILE CONTAINER --- */
+.mobile-screen {
+    width: 100%;
+    max-width: 480px;
+    height: 100vh;
+    height: 100dvh;
+    background: linear-gradient(180deg, #6c8ef2 0%, #8ca5f8 50%, #9cb3f9 100%);
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Trên màn hình máy tính lớn hơn 480px: Giữ hiệu ứng khung Game Mobile */
+@media (min-width: 481px) {
+    .mobile-screen {
+        height: 90vh;
+        max-height: 840px;
+        border: 4px solid #333;
+        border-radius: 20px;
+    }
+}
+
+/* --- HEADER --- */
+.header {
+    background-color: #536dbd;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 12px 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.user-profile {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 6px;
+    min-width:0;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    flex:1;
+}
+
+.player-name {
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.level-text {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.exp-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.exp-bar-container {
+    width: 75px;
+    height: 8px;
+    background-color: #333;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.exp-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.exp-text {
+    font-size: 11px;
+    font-weight: bold;
+    color: #e0e0e0;
+    white-space: nowrap;
+}
+
+/* Resources & Settings */
+.resources {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.resource-box {
+    background: rgba(16, 26, 67, 0.4);
+    border: 1px solid #7c98e6;
+    border-radius: 12px;
+    padding: 4px 5px 4px 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    min-width: 70px;
+    justify-content: space-between;
+}
+
+.icon-coin {
+    width: 15px;
+    height: 15px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    color: #b37400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    border: 1px solid #fff;
+}
+
+.icon-gem {
+    color: #00d2ff;
+    font-size: 12px;
+}
+
+.amount {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-add {
+    width: 15px;
+    height: 15px;
+    background-color: #4a90e2;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    padding-bottom: 3px;
+}
+
+.btn-settings {
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+/* --- GAME CONTENT --- */
+.game-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.character-img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    position: absolute;
+    bottom: 75px;
+    pointer-events: none;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 15px;
+    gap: 12px;
+    z-index: 5;
+}
+
+.action-btn {
+    flex: 1;
+    height: 70px;
+    border: 2px solid #233e8b;
+    border-radius: 12px;
+    transform: skewX(-12deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    background-size: cover;
+    background-position: center;
+}
+
+.btn-stage {
+    background-image: url('assets/anh1.jpg');
+}
+
+.btn-game {
+    background-image: url('assets/link_anh_khung_2.jpg');
+}
+
+.action-btn span {
+    transform: skewX(12deg);
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.action-btn:active {
+    transform: skewX(-12deg) scale(0.96);
+}
+
+/* --- FOOTER (NAVBAR) --- */
+.footer {
+    background-color: #536dbd;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #cdd9f9;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    flex: 1;
+    position: relative;
+    padding: 4px 0;
+}
+
+.nav-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-item i {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.nav-item.active {
+    color: #ffffff;
+}
+
+.nav-item.active::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}

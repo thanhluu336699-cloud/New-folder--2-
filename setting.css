@@ -1,0 +1,126 @@
+
+.settings-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #6c8ef2 0%, #8ca5f8 50%, #9cb3f9 100%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 24px 25px 24px;
+    
+    /* Hiệu ứng trượt từ dưới lên nhanh */
+    transform: translateY(0);
+    transition: transform 0.2s cubic-bezier(0.1, 0.9, 0.2, 1), visibility 0.2s;
+    visibility: visible;
+}
+
+.settings-screen.hidden {
+    transform: translateY(100%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.settings-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 12px;
+    border-bottom: 2px dashed rgba(40, 60, 130, 0.4);
+    margin-top: 10px;
+}
+
+.btn-back {
+    position: absolute;
+    left: 0;
+    background: none;
+    border: none;
+    font-size: 26px;
+    font-weight: bold;
+    color: #1a237e;
+    cursor: pointer;
+}
+
+.settings-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a237e;
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 15px;
+    flex: 1;
+}
+
+.settings-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.group-title {
+    background-color: #4a6ec5;
+    color: #101c56;
+    font-weight: 800;
+    font-size: 17px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 16px;
+    color: #152259;
+    font-weight: 700;
+    font-size: 14.5px;
+    cursor: pointer;
+}
+
+.setting-row:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+.arrow-icon {
+    font-size: 16px;
+    color: #152259;
+    font-weight: 900;
+}
+
+.danger-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-left: 16px;
+    margin-top: 5px;
+}
+
+.danger-btn {
+    background: none;
+    border: none;
+    color: #e53935;
+    font-weight: 800;
+    font-size: 14.5px;
+    cursor: pointer;
+    padding: 2px 0;
+}
+
+.settings-watermark {
+    text-align: center;
+    font-family: 'ITC Magnifico', 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #435480;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 0px #2a3556, 2px 2px 0px #2a3556;
+}

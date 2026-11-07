@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game UI Header & Footer</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Giao diện Home -->
+    <link rel="stylesheet" href="home.css">
+
+    <!-- CSS Màn hình chờ mở đầu -->
+    <link rel="stylesheet" href="splash.css">
+
+    <!-- CSS Setting -->
+    <link rel="stylesheet" href="setting.css">
+
+    <!-- CSS shop -->
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+    <!-- Màn hình chờ mở đầu (Splash Screen) -->
+    <div id="splash-screen" class="splash-screen">
+        <div class="splash-logo">ZYJEWVIE</div>
+        <div class="splash-footer">@^2LUU</div>
+    </div>
+
+    <!-- Màn hình giao diện (Home Screen) -->
+    <div class="mobile-screen">
+        <!-- Header Game -->
+        <header class="header">
+            <div class="user-profile">
+                <img class="avatar" src="https://i.pravatar.cc/100?img=47" alt="Avatar">
+                <div class="user-info">
+                    <span class="player-name">Player's name</span>
+                    <span class="level-text">Lv.1</span>
+                    <div class="exp-row">
+                        <div class="exp-bar-container">
+                            <div class="exp-bar"></div>
+                        </div>
+                        <span class="exp-text">0 / 1000</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khu vực tài nguyên và cài đặt -->
+            <div class="resources">
+                <div class="resource-box">
+                    <div class="icon-coin">$</div>
+                    <span class="amount">1000B</span>
+                    <button class="btn-add" aria-label="Add coin">+</button>
+                </div>
+
+                <div class="resource-box">
+                    <i class="fa-solid fa-gem icon-gem"></i>
+                    <span class="amount">9999</span>
+                    <button class="btn-add" aria-label="Add gem">+</button>
+                </div>
+
+                <i class="fa-solid fa-gear btn-settings"></i>
+            </div>
+        </header>
+
+        <!-- Màn hình chính Game -->
+        <main class="game-content">
+            <img class="character-img" src="anh3.png" alt="Character">
+           
+            <div class="action-buttons">
+                <button class="action-btn btn-stage">
+                    <span>Stage</span>
+                </button>
+                <button class="action-btn btn-game">
+                    <span>GAME</span>
+                </button>
+            </div>
+        </main>
+        <!-- MÀN HÌNH SHOP -->
+        <div id="shop-screen" class="shop-screen hidden">
+            <div class="shop-title">CỬA HÀNG CẮT CỔ</div>
+
+            <div class="shop-tabs">
+                <button class="tab-btn active">Ca sĩ</button>
+                <button class="tab-btn">Trang Phục</button>
+                <button class="tab-btn">Hiệu ứng</button>
+                <button class="tab-btn">Premium</button>
+            </div>
+
+            <div class="shop-grid">
+                <!-- 16 Thẻ vật phẩm (4x4) -->
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+            </div>
+        </div>
+        <!-- Thanh Menu Footer Cố Định Ở Dưới Cùng -->
+        <footer class="footer">
+            <div class="nav-item active" data-target="home-view">
+                <i class="fa-solid fa-house"></i>
+                <span>Trang chủ</span>
+            </div>
+            <div class="nav-item" data-target="achieve-view">
+                <i class="fa-solid fa-trophy"></i>
+                <span>Thành tựu</span>
+            </div>
+            <div class="nav-item" data-target="ranking-view">
+                <i class="fa-solid fa-building"></i>
+                <span>Xếp hạng</span>
+            </div>
+            <div class="nav-item" data-target="benefits-view">
+                <i class="fa-solid fa-gift"></i>
+                <span>Phúc lợi</span>
+            </div>
+            <div class="nav-item" data-target="shop-screen">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Shop</span>
+            </div>
+        </footer>
+    </div>
+
+
+        <!-- Màn hình Cài đặt -->
+        <div id="settings-modal" class="settings-screen hidden">
+            <div class="settings-header">
+                <button id="btn-close-settings" class="btn-back">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <h1 class="settings-title">Settings</h1>
+            </div>
+
+            <div class="settings-content">
+                <div class="settings-group">
+                    <div class="group-title">INTERFACE</div>
+                    <div class="setting-row"><span>Background</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                    <div class="setting-row"><span>Mode</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                </div>
+
+                <div class="settings-group">
+                    <div class="group-title">AUDIO</div>
+                    <div class="setting-row"><span>Background Music</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                    <div class="setting-row"><span>Sound Effects</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                    <div class="setting-row"><span>Notifications</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                </div>
+
+                <div class="settings-group">
+                    <div class="group-title">SUPPORT</div>
+                    <div class="setting-row"><span>Guidance</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                    <div class="setting-row"><span>Privacy Policy</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                    <div class="setting-row"><span>Terms of Service</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                </div>
+
+                <div class="danger-zone">
+                    <button class="danger-btn">Sign Out</button>
+                    <button class="danger-btn">Delete Account</button>
+                </div>
+            </div>
+
+            <div class="settings-watermark">ZYJEWVIE</div>
+        </div>
+        
+
+    </div>
+
+    <!-- JS xử lý ẩn màn hình chờ -->
+    <script src="splash.js"></script>
+
+    <!-- JS settings -->
+    <script src="setting.js"></script>
+
+    <!-- JS shop -->
+    <script src="shop.js"></script>
+</body>
+</html>
+
