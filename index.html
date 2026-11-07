@@ -19,6 +19,7 @@
 
     <!-- CSS shop -->
     <link rel="stylesheet" href="shop.css">
+
 </head>
 <body>
     <!-- Màn hình chờ mở đầu (Splash Screen) -->
@@ -80,72 +81,56 @@
         <div id="shop-screen" class="shop-screen hidden">
             <div class="shop-title">CỬA HÀNG CẮT CỔ</div>
 
+            <!-- Thanh Tabs -->
             <div class="shop-tabs">
-                <button class="tab-btn active">Ca sĩ</button>
-                <button class="tab-btn">Trang Phục</button>
-                <button class="tab-btn">Hiệu ứng</button>
-                <button class="tab-btn">Premium</button>
+                <button class="tab-btn active" data-tab="singers">Singers</button>
+                <button class="tab-btn" data-tab="outfits">Outfits</button>
+                <button class="tab-btn" data-tab="effects">Effects</button>
+                <button class="tab-btn" data-tab="premium">Premium</button>
             </div>
 
-            <div class="shop-grid">
-                <!-- Tạo 30 thẻ ca sĩ -->
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+            <!-- KHU VỰC NỘI DUNG RIÊNG CHO TỪNG TAB -->
+            <div class="shop-tab-content">
+                <!-- Tab 1: Singers -->
+                <div id="tab-singers" class="tab-pane active">
+                    <div class="shop-grid" id="singers-grid"></div>
+                </div>
 
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <!-- Tab 2: Outfits (Giao diện cấu trúc khác tùy ý bạn) -->
+                <div id="tab-outfits" class="tab-pane">
+                    <div class="outfits-container" id="outfits-grid"></div>
+                </div>
 
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <!-- Tab 3: Effects (Không có visual) -->
+                <div id="tab-effects" class="tab-pane">
+                    <div class="effects-list" id="effects-grid"></div>
+                </div>
 
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
-                <div class="shop-card"><div class="card-avatar"></div><div class="card-title">Tên ca sĩ</div><div class="card-sub">visual: 23</div><div class="card-price">1110B</div></div>
+                <!-- Tab 4: Premium (Giao diện dạng thẻ VIP riêng) -->
+                <div id="tab-premium" class="tab-pane">
+                    <div class="premium-banner-wrapper" id="premium-grid"></div>
+                </div>
             </div>
         </div>
+
 
         <!-- Thanh Menu Footer Cố Định Ở Dưới Cùng -->
         <footer class="footer">
             <div class="nav-item active" data-target="home-view">
                 <i class="fa-solid fa-house"></i>
-                <span>Trang chủ</span>
+                <span>Home</span>
             </div>
             <div class="nav-item" data-target="achieve-view">
                 <i class="fa-solid fa-trophy"></i>
-                <span>Thành tựu</span>
+                <span>Achieve</span>
             </div>
             <div class="nav-item" data-target="ranking-view">
                 <i class="fa-solid fa-building"></i>
-                <span>Xếp hạng</span>
+                <span>Ranking</span>
             </div>
             <div class="nav-item" data-target="benefits-view">
                 <i class="fa-solid fa-gift"></i>
-                <span>Phúc lợi</span>
+                <span>Benefits</span>
             </div>
             <div class="nav-item" data-target="shop-screen">
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -205,6 +190,7 @@
 
     <!-- JS shop -->
     <script src="shop.js"></script>
+
 </body>
 </html>
 

@@ -6,11 +6,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #6088f5; /* Màu nền xanh lam nhạt chuẩn ảnh */
+    background: #6088f5;
     z-index: 100;
     display: flex;
     flex-direction: column;
-    padding: 16px 12px 70px 12px; /* Padding dưới để không bị che bởi Bottom Menu */
+    padding: 16px 14px 70px 14px;
     box-sizing: border-box;
     overflow: hidden;
     transform: translateX(0);
@@ -27,7 +27,7 @@
 /* Tiêu đề 3D */
 .shop-title {
     text-align: center;
-    font-size: 26px;
+    font-size: 33px;
     font-weight: 900;
     color: #121f6e;
     margin-top: 10px;
@@ -50,7 +50,7 @@
 .tab-btn {
     background: none;
     border: none;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 800;
     color: #121f6e;
     padding: 4px 8px;
@@ -75,14 +75,15 @@
     border-radius: 2px;
 }
 
-/* Lưới chứa 4 cột cuộn mượt */
+/* --- LƯỚI CHỦ ĐẠO: 3 CỘT (3 ca sĩ 1 hàng) --- */
 .shop-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 8px;
-    row-gap: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 30px 15px;
     overflow-y: auto;
-    padding: 24px 4px 15px 4px;
+    padding: 28px 6px 20px 6px;
     flex: 1;
 }
 
@@ -91,60 +92,156 @@
     display: none;
 }
 
-/* Thẻ vật phẩm ca sĩ */
+/* Thẻ ca sĩ (Được mở rộng kích thước phù hợp với 3 cột) */
 .shop-card {
     position: relative;
-    background: #4264ee; /* Màu thẻ xanh nổi bật */
-    border-radius: 12px;
-    padding: 26px 4px 8px 4px;
+    background: #4264ee;
+    border-radius: 14px;
+    padding: 32px 6px 10px 6px; /* Tăng padding trên để vừa avatar to hơn */
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+    width: 31%;
+    height: 130px;
 }
 
-/* Avatar hình tròn chứa phong cảnh mặc định */
+/* Avatar to hơn và nổi bật hơn */
 .card-avatar {
     position: absolute;
-    top: -20px;
-    width: 44px;
-    height: 44px;
+    top: -24px;
+    width: 60px;                            /* Tăng kích thước avatar */
+    height: 60px;
     border-radius: 50%;
     background-color: #ffffff;
     background-image: radial-gradient(circle at 50% 25%, #ffffff 30%, #7dbb54 31%, #4e8c25 100%);
     border: 2px solid #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* Tên ca sĩ */
 .card-title {
-    font-size: 10.5px;
+    font-size: 15px;                        /* Tăng cỡ chữ tên ca sĩ */
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 2px;
+    margin-top:4px;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
     text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.4);
 }
 
 /* Chỉ số visual */
 .card-sub {
-    font-size: 8px;
+    font-size: 14px;                       /* Tăng cỡ chữ chỉ số */
     font-weight: 600;
     color: #bbcdff;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 /* Nút giá tiền dạng viên thuốc */
 .card-price {
     background-color: #2b45b0;
     color: #ffffff;
-    font-size: 10px;
+    font-size: 14px;                        /* Tăng cỡ chữ giá tiền */
+    font-weight: 900;
+    padding: 6px 0;
+    border-radius: 14px;
+    width: 92%;
+    text-align: center;
+    line-height: 1;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Ẩn các trang tab mặc định */
+.tab-pane {
+    display: none;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Hiển thị trang tab đang được chọn */
+.tab-pane.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-tab-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+
+/* Lưới 4 cột dành riêng cho tab Effects */
+.effects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 15px 10px; /* Khoảng cách hàng và cột */
+    overflow-y: auto;
+    padding: 10px 4px;
+    flex: 1;
+}
+
+.effects-grid::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+}
+
+/* Thẻ item trong tab Effects (nhỏ hơn để vừa 4 cột) */
+.effect-card {
+    position: relative;
+    background: #4264ee;
+    border-radius: 12px;
+    padding: 26px 4px 8px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+    width: 23%; /* Chiếm khoảng 1/4 để vừa 4 cột */
+    height: 110px;
+}
+
+.effect-card .card-avatar {
+    position: absolute;
+    top: -18px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.effect-card .card-title {
+    font-size: 11px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 2px;
+    margin-top: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.effect-card .card-price {
+    background-color: #2b45b0;
+    color: #ffffff;
+    font-size: 11px;
     font-weight: 900;
     padding: 5px 0;
     border-radius: 12px;
-    width: 90%;
+    width: 92%;
     text-align: center;
     line-height: 1;
-    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
 }
-
