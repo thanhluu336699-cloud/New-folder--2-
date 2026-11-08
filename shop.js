@@ -12,8 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: "Set Học Sinh", desc: "Phong cách dễ thương năng động", price: "800B" }
         ],
         effects: [
-            { name: "Hiệu ứng Pháo Hoa", price: "800 Gem" },
-            { name: "Hiệu ứng Trái Tim Bay", price: "1500 Gem" }
+            { name: "Pháo Hoa", price: "800B", icon: "effect1.png" },
+            { name: "Pháo Hoa", price: "800B", icon: "effect1.png" },
+            { name: "Pháo Hoa", price: "800B", icon: "effect1.png" },
+            { name: "Pháo Hoa", price: "800B", icon: "effect1.png" },
+            { name: "Pháo Hoa", price: "800B", icon: "effect1.png" },
+            { name: "Pháo Hoa", price: "800B", icon: "effect1.png" },
+            { name: "Pháo Hoa", price: "800B", icon: "effect1.png" },
         ],
         premium: [
             { name: "Gói Kim Cương Siêu To", desc: "Nhận ngay 10,000 Gem + Quà", price: "$9.99" },
@@ -48,17 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
             `).join('');
         }
 
-        // Render Effects (Không có visual, chỉ có tên và giá)
+        // Render Tab Effects
         const effectsGrid = document.getElementById('effects-grid');
         if (effectsGrid) {
             effectsGrid.innerHTML = shopData.effects.map(item => `
-                <div class="shop-card">
-                    <div class="card-title" style="margin-top: 20px;">${item.name}</div>
-                    <div class="card-price" style="margin-top: 15px;">${item.price}</div>
+                <div class="effect-item">
+                    <div class="effect-icon-box">
+                        <img src="${item.icon}" alt="${item.name}">
+                    </div>
+                    <div class="effect-name">${item.name}</div>
+                    <div class="effect-price-btn">${item.price}</div>
                 </div>
             `).join('');
-        }
-
+            }
         // Render Premium
         const premiumGrid = document.getElementById('premium-grid');
         if (premiumGrid) {

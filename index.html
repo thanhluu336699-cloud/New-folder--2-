@@ -20,6 +20,12 @@
     <!-- CSS shop -->
     <link rel="stylesheet" href="shop.css">
 
+    <!-- CSS effect -->
+    <link rel="stylesheet" href="effect.css">
+
+    <!-- CSS profile -->
+    <link rel="stylesheet" href="profile.css">
+
 </head>
 <body>
     <!-- Màn hình chờ mở đầu (Splash Screen) -->
@@ -77,6 +83,7 @@
                 </button>
             </div>
         </main>
+
         <!-- MÀN HÌNH SHOP -->
         <div id="shop-screen" class="shop-screen hidden">
             <div class="shop-title">CỬA HÀNG CẮT CỔ</div>
@@ -113,7 +120,6 @@
             </div>
         </div>
 
-
         <!-- Thanh Menu Footer Cố Định Ở Dưới Cùng -->
         <footer class="footer">
             <div class="nav-item active" data-target="home-view">
@@ -138,7 +144,6 @@
             </div>
         </footer>
     </div>
-
 
         <!-- Màn hình Cài đặt -->
         <div id="settings-modal" class="settings-screen hidden">
@@ -179,6 +184,34 @@
             <div class="settings-watermark">ZYJEWVIE</div>
         </div>
         
+        <!-- MÀN HÌNH PROFILE (TRƯỢT RA) -->
+        <div id="profile-screen" class="profile-screen hidden">
+            <div class="profile-header">
+                <button id="btn-close-profile" class="btn-back">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <h1 class="profile-title">PROFILE</h1>
+            </div>
+
+            <div class="profile-content">
+                <div class="profile-avatar-wrapper">
+                    <img class="profile-avatar-large" src="https://i.pravatar.cc/100?img=47" alt="Avatar Large">
+                    <span class="profile-name">Player's name</span>
+                    <span class="profile-level">Level 1</span>
+                </div>
+
+                <div class="profile-stats">
+                    <div class="stat-box">
+                        <span class="stat-title">EXP</span>
+                        <span class="stat-value">0 / 1000</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-title">ID</span>
+                        <span class="stat-value">#88392</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -191,6 +224,8 @@
     <!-- JS shop -->
     <script src="shop.js"></script>
 
+    <!-- JS profile -->
+    <script src="profile.js"></script>
 </body>
 </html>
 
