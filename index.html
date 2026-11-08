@@ -128,14 +128,50 @@
             </div>
         </div>
 
+        <!-- MÀN HÌNH MESSAGE -->
+        <div id="message-screen" class="message-screen hidden">
+            <div class="message-header">
+                <div class="app-logo">ZYJEWVIE</div>
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="" disabled>
+                </div>
+                <button class="pill-btn status-unread">Chưa đọc</button>
+            </div>
+
+            <div class="message-list">
+                <!-- Item 1: Admine -->
+                <div class="message-item">
+                    <div class="avatar-box">
+                        <img src="avatar_placeholder.png" alt="Admine Avatar" class="msg-avatar">
+                    </div>
+                    <div class="msg-content">
+                        <div class="msg-title">Admine</div>
+                        <div class="msg-snippet">Chào mừng bạn đến với ZYJEWVIE, cảm ơn bạn đã quan tâm ...</div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Thế giới -->
+                <div class="message-item">
+                    <div class="avatar-box">
+                        <img src="avatar_placeholder.png" alt="Thế giới Avatar" class="msg-avatar">
+                    </div>
+                    <div class="msg-content">
+                        <div class="msg-title">Thế giới</div>
+                        <div class="msg-snippet">Tin nhắn từ group cộng đồng ZYJEWVIE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Thanh Menu Footer Cố Định Ở Dưới Cùng -->
         <footer class="footer hidden">
             <div class="nav-item active" data-target="home-view">
                 <i class="fa-solid fa-house"></i>
                 <span>Home</span>
             </div>
-            <div class="nav-item" data-target="message-view">
-                <i class="fa-solid fa-message"></i>
+            <div class="nav-item" data-target="message-screen">
+                <i class="fa-solid fa-envelope"></i>
                 <span>Message</span>
             </div>
             <div class="nav-item" data-target="ranking-view">
@@ -150,6 +186,8 @@
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span>Shop</span>
             </div>
+        </footer>
+
         </footer>
     </div>
 
@@ -260,12 +298,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- MÀN HÌNH MESSAGE -->
-        <div id="message-screen" class="shop-screen hidden">
-            <div class="shop-title">MESSAGE</div>
-            <div style="color: white; text-align: center; margin-top: 50px;">Nội dung trang đang cập nhật...</div>
         </div>
 
         <!-- MÀN HÌNH RANKING -->
