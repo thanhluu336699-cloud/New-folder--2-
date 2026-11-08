@@ -312,3 +312,8 @@ body {
     background-color: #ffffff;
     border-radius: 2px;
 }
+
+.footer.hidden {
+    display: none !important;
+}
+
