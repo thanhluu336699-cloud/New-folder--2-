@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 1. ĐỔI TÊN, ĐỒNG BỘ TRANG CHỦ ---
+    // --- 1. ĐỔI TÊN & ĐỒNG BỘ TRANG CHỦ ---
     if (btnChangeName) {
         btnChangeName.addEventListener('click', () => {
             const currentName = homePlayerName ? homePlayerName.textContent : profilePlayerName.textContent;
@@ -85,3 +85,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
