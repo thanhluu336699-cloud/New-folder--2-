@@ -186,33 +186,73 @@
         
         <!-- MÀN HÌNH PROFILE (TRƯỢT RA) -->
         <div id="profile-screen" class="profile-screen hidden">
-            <div class="profile-header">
+            <!-- Header xanh đậm phía trên -->
+            <div class="profile-top-banner">
                 <button id="btn-close-profile" class="btn-back">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <h1 class="profile-title">PROFILE</h1>
+                <div class="avatar-container">
+                    <img id="profile-avatar-img" class="profile-avatar-large" src="https://i.pravatar.cc/100?img=47" alt="Avatar Large">
+                    <button id="btn-change-avatar" class="edit-avatar-btn" title="Đổi Avatar">
+                        <i class="fa-solid fa-pencil"></i>
+                    </button>
+                    <input type="file" id="avatar-input" accept="image/*" style="display: none;">
+                </div>
             </div>
 
-            <div class="profile-content">
-                <div class="profile-avatar-wrapper">
-                    <img class="profile-avatar-large" src="https://i.pravatar.cc/100?img=47" alt="Avatar Large">
-                    <span class="profile-name">Player's name</span>
-                    <span class="profile-level">Level 1</span>
+            <!-- Nội dung bên dưới banner -->
+            <div class="profile-body">
+                <div class="profile-user-header">
+                    <div class="name-row">
+                        <span id="profile-player-name" class="profile-name">PLAYER'S NAME</span>
+                        <button id="btn-change-name" class="edit-icon-btn" title="Đổi tên">
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                    </div>
+                    <div class="bio-row">
+                        <span id="profile-bio-text" class="profile-bio">Mô tả</span>
+                        <button id="btn-change-bio" class="edit-icon-btn" title="Đổi mô tả">
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+                    </div>
                 </div>
 
-                <div class="profile-stats">
-                    <div class="stat-box">
-                        <span class="stat-title">EXP</span>
-                        <span class="stat-value">0 / 1000</span>
+                <!-- Section Giới thiệu -->
+                <div class="profile-section">
+                    <h3 class="section-title">Giới thiệu</h3>
+                    <div class="info-row">
+                        <span class="info-label">Ngày mở cửa: 02/06/2018</span>
                     </div>
-                    <div class="stat-box">
-                        <span class="stat-title">ID</span>
-                        <span class="stat-value">#88392</span>
+                    <div class="info-row id-row">
+                        <span class="info-label">id: <span id="user-id-text">0812439785styesf</span></span>
+                        <button id="btn-copy-id" class="btn-copy" title="Sao chép ID">
+                            <i class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+                    <div class="info-row clickable-row">
+                        <span class="info-label">Bảng xếp hạng</span>
+                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="info-row clickable-row">
+                        <span class="info-label">Thành tích nổi bật</span>
+                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                    </div>
+                </div>
+
+                <!-- Section Tài nguyên -->
+                <div class="profile-section">
+                    <h3 class="section-title">Tài nguyên</h3>
+                    <div class="info-row clickable-row">
+                        <span class="info-label">Số ca sĩ sở hữu</span>
+                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="info-row clickable-row">
+                        <span class="info-label">Số trang phục sở hữu</span>
+                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- JS xử lý ẩn màn hình chờ -->
