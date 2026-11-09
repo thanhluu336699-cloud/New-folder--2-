@@ -155,6 +155,50 @@
             </div>
         </div>
 
+        <!-- MÀN HÌNH BENEFITS (PHÚC LỢI) -->
+        <div id="benefits-screen" class="benefits-screen hidden">
+            <h1 class="benefits-logo">ZYJEWVIE</h1>
+
+            <!-- CARD 1: CHECK-IN 6 DAYS -->
+            <div class="benefits-card">
+                <h2 class="card-title">CHECK-IN 6 DAYS</h2>
+                <div class="checkin-grid">
+                    <div class="checkin-item">
+                        <span class="checkin-reward">+30</span>
+                        <span class="checkin-day">Day 1</span>
+                    </div>
+                    <div class="checkin-item">
+                        <span class="checkin-reward">+30</span>
+                        <span class="checkin-day">Day 2</span>
+                    </div>
+                    <div class="checkin-item">
+                        <span class="checkin-reward">+30</span>
+                        <span class="checkin-day">Day 3</span>
+                    </div>
+                    <div class="checkin-item">
+                        <span class="checkin-reward">+30</span>
+                        <span class="checkin-day">Day 4</span>
+                    </div>
+                    <div class="checkin-item">
+                        <span class="checkin-reward">+30</span>
+                        <span class="checkin-day">Day 5</span>
+                    </div>
+                    <div class="checkin-item">
+                        <span class="checkin-reward">+30</span>
+                        <span class="checkin-day">Day 6</span>
+                    </div>
+                </div>
+                <button class="btn-checkin">Check in</button>
+            </div>
+
+            <!-- CARD 2: GENERAL BENEFITS -->
+            <div class="benefits-card">
+                <h2 class="card-title">GENERAL BENEFITS</h2>
+                <!-- Danh sách sẽ được tự động đổ vào đây bằng JS -->
+                <div class="task-list" id="general-benefits-list"></div>
+            </div>
+        </div>
+
         <!-- Thanh Menu Footer Cố Định Ở Dưới Cùng -->
         <footer class="footer hidden">
             <div class="nav-item active" data-target="home-view">
@@ -169,16 +213,15 @@
                 <i class="fa-solid fa-building"></i>
                 <span>Ranking</span>
             </div>
-            <div class="nav-item" data-target="benefits-view">
+            <div class="nav-item" data-target="benefits-screen">
                 <i class="fa-solid fa-gift"></i>
                 <span>Benefits</span>
             </div>
+
             <div class="nav-item" data-target="shop-screen">
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span>Shop</span>
             </div>
-        </footer>
-
         </footer>
     </div>
 
@@ -308,6 +351,8 @@
     <script src="splash.js"></script>
     <!-- JS settings -->
     <script src="setting.js"></script>
+    <!-- JS home -->
+    <script src="home.js"></script>
     <!-- JS shop -->
     <script src="shop.js"></script>
     <!-- JS profile -->

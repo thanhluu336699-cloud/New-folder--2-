@@ -1,0 +1,169 @@
+/* Màn hình Benefits trượt full khung phía trên Footer */
+.benefits-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px); /* Dành 60px dưới cùng cho Footer */
+    background: linear-gradient(180deg, #5b8cf7 0%, #7ca7ff 100%);
+    padding: 50px 18px 25px 18px; /* Padding trên 50px cho chữ ZYJEWVIE thoáng hơn */
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 10; /* Đảm bảo nằm đè lên layer main content */
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+.benefits-screen.hidden {
+    display: none;
+}
+
+/* Tiêu đề ZYJEWVIE góc trên bên trái chuẩn theo ảnh */
+.benefits-logo {
+    text-align: left;
+    font-size: 33px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    color: #ffffff;
+    font-family: serif; /* Font có chân nhẹ giống thiết kế mẫu */
+}
+
+/* Thẻ Bo Tròn Bóng Mờ (Check-in & General Benefits) */
+.benefits-card {
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 18px 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    font-size: 19px;
+    font-weight: 800;
+    text-align: center;
+    color: #162456;
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Khung 6 ngày check-in */
+.checkin-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.checkin-item {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding: 12px 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 75px;
+    box-sizing: border-box;
+}
+
+.checkin-reward {
+    color: #ffd700;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.checkin-day {
+    color: #162456;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Nút Check in rộng full thẻ */
+.btn-checkin {
+    width: 100%;
+    background: #4175e8;
+    color: #162456;
+    border: none;
+    padding: 12px 0;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    transition: transform 0.1s ease;
+}
+
+.btn-checkin:active {
+    transform: scale(0.97);
+}
+
+/* Danh sách General Benefits */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.task-reward {
+    font-size: 20px;
+    font-weight: 800;
+    color: #162456;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.coin-icon {
+    background: #ffd700;
+    color: #a67200;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 900;
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+}
+
+.task-desc {
+    font-size: 16px;
+    color: #ffffff;
+    opacity: 0.95;
+}
+
+/* Nút Go nhỏ bên phải */
+.btn-go {
+    background: #4175e8;
+    color: #162456;
+    border: none;
+    padding: 10px 26px;
+    border-radius: 18px;
+    font-size: 17px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    transition: transform 0.1s ease;
+}
+
+.btn-go:active {
+    transform: scale(0.94);
+}
+
