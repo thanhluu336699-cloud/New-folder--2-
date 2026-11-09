@@ -29,7 +29,7 @@
 /* Banner Xanh Đậm phía trên */
 .profile-top-banner {
     background-color: #0d47a1;
-    height: 140px;
+    min-height: 140px;
     position: relative;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
