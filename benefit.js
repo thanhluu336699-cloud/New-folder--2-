@@ -76,4 +76,3 @@ document.querySelectorAll('.footer .nav-item').forEach(item => {
         }
     });
 });
-

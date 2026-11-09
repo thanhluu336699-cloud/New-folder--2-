@@ -92,46 +92,46 @@
 }
 
 /* Thẻ ca sĩ */
+/* Thẻ ca sĩ */
 .shop-card {
     position: relative;
     background: #4264ee;
     border-radius: 14px;
-    padding: 32px 4px 10px 4px; 
+    padding: 45px 6px 10px 6px; 
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
-    width: 100%; /* Để CSS Grid tự quản lý chiều rộng */
-    height: 130px;
+    width: 100%; 
+    min-height: 145px; /* Dùng min-height thay vì height cố định để tự co giãn */
 }
 
-
+/* Tên ca sĩ: Tự động co giãn nhỏ lại cho vừa khít một dòng, tuyệt đối không xuống hàng hay ba chấm */
+.shop-card .card-title {
+    font-size: clamp(9px, 3.2vw, 14px); /* Tự động co nhỏ font theo độ rộng màn hình/cột, nhỏ nhất là 9px */
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 2px;
+    margin-top: 4px;
+    text-align: center;
+    white-space: nowrap;                /* Cấm tuyệt đối xuống dòng */
+    overflow: visible;                  /* Không bị ẩn chữ */
+    text-overflow: clip;                /* Không hiện dấu ... */
+    max-width: 100%;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.4);
+}
 
 /* Avatar to hơn và nổi bật hơn */
 .card-avatar {
     position: absolute;
     top: -24px;
-    width: 60px;                            /* Tăng kích thước avatar */
-    height: 60px;
+    min-width: 65px;                            /* Tăng kích thước avatar */
+    min-height: 65px;
     border-radius: 50%;
     background-color: #ffffff;
     background-image: radial-gradient(circle at 50% 25%, #ffffff 30%, #7dbb54 31%, #4e8c25 100%);
     border: 2px solid #ffffff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Tên ca sĩ */
-.card-title {
-    font-size: 15px;                        /* Tăng cỡ chữ tên ca sĩ */
-    font-weight: 800;
-    color: #ffffff;
-    margin-bottom: 2px;
-    margin-top:4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.4);
 }
 
 /* Chỉ số visual */

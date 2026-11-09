@@ -4,12 +4,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 60px); /* Dành 60px dưới cùng cho Footer */
+    height: 100%;
     background: linear-gradient(180deg, #5b8cf7 0%, #7ca7ff 100%);
     padding: 50px 18px 25px 18px; /* Padding trên 50px cho chữ ZYJEWVIE thoáng hơn */
     box-sizing: border-box;
     overflow-y: auto;
-    z-index: 10; /* Đảm bảo nằm đè lên layer main content */
+    z-index: 100; /* Đảm bảo nằm đè lên layer main content */
     font-family: Arial, sans-serif;
     color: #ffffff;
 }
