@@ -1,0 +1,185 @@
+/* --- BACKGROUND SCREEN STYLES --- */
+.background-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #5d84f2 0%, #7d9ef7 45%, #9eb7fb 100%);
+    z-index: 110; /* Nằm đè lên màn hình Settings (z-index: 100) */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    transform: translateX(0);
+    transition: transform 0.25s cubic-bezier(0.1, 0.9, 0.2, 1), visibility 0.25s;
+    visibility: visible;
+}
+
+.background-screen.hidden {
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Header: < Hình nền */
+.bg-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 20px 14px 20px;
+}
+
+.bg-header .btn-back {
+    position: static;
+    background: none;
+    border: none;
+    font-size: 26px;
+    font-weight: 900;
+    color: #0b1670;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.bg-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: #0b1670;
+    margin: 0;
+}
+
+/* Nội dung chính */
+.bg-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.bg-body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Từng phân vùng (Màu nền / Nhân vật) */
+.bg-section {
+    padding: 14px 20px 20px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.bg-section:last-child {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.bg-section-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: #0b1670;
+    margin-bottom: 14px;
+}
+
+/* --- KHỐI 1: MÀU NỀN (CUỘN NGANG) --- */
+.bg-color-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.bg-color-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.bg-color-card {
+    flex: 0 0 82px;
+    height: 135px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #bfe6ff 0%, #e6f6ff 62%, #7cb322 62%, #5a9412 100%);
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.bg-color-card:active {
+    transform: scale(0.95);
+}
+
+.bg-color-card.active {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px #1a237e;
+}
+
+.bg-color-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- KHỐI 2: NHÂN VẬT (LƯỚI 3 CỘT) --- */
+.bg-character-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 14px;
+}
+
+.bg-char-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.bg-char-card {
+    width: 100%;
+    aspect-ratio: 3 / 3.4;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #bfe6ff 0%, #e6f6ff 62%, #7cb322 62%, #5a9412 100%);
+    border: 2px solid transparent;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.bg-char-item:active .bg-char-card {
+    transform: scale(0.95);
+}
+
+.bg-char-item.active .bg-char-card {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px #1a237e;
+}
+
+.bg-char-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Nhãn "Tên" dạng viên thuốc màu xanh tím */
+.bg-char-name {
+    width: 100%;
+    background-color: #5b69d6;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    padding: 5px 4px;
+    border-radius: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bg-char-item.active .bg-char-name {
+    background-color: #283696;
+}
+

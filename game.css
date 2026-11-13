@@ -1,0 +1,173 @@
+/* --- GAME SCREEN STYLES --- */
+.game-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #5c83f2 0%, #86a3f8 50%, #9cb3f9 100%);
+    z-index: 120; /* Đè lên cả header và footer giống ảnh thiết kế */
+    display: flex;
+    flex-direction: column;
+    padding: 16px 20px 20px 20px;
+    box-sizing: border-box;
+    transition: transform 0.25s cubic-bezier(0.1, 0.9, 0.2, 1), visibility 0.25s;
+    visibility: visible;
+}
+
+.game-screen.hidden {
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Nút Back (<) góc trên bên trái */
+.game-top-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.game-back-btn {
+    background: none;
+    border: none;
+    color: #0b1670;
+    font-size: 28px;
+    font-weight: 900;
+    cursor: pointer;
+    padding: 4px 8px 4px 0;
+    line-height: 1;
+}
+
+.game-back-btn:active {
+    transform: scale(0.92);
+}
+
+/* Thanh chuyển Tab: Game | Your game */
+.game-tabs {
+    display: flex;
+    width: 100%;
+    border-bottom: 1.5px solid #2b479e;
+    margin-bottom: 18px;
+}
+
+.game-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 8px 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #0d1b7a;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s ease;
+}
+
+.game-tab-btn.active {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.game-tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1.5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #26439c;
+}
+
+/* Khu vực lưới danh sách Game */
+.game-tab-pane {
+    display: none;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.game-tab-pane.active {
+    display: block;
+}
+
+.game-tab-pane::-webkit-scrollbar {
+    display: none;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 18px;
+    padding-bottom: 20px;
+}
+
+/* Thẻ Game Card */
+.game-card {
+    background-color: #3a6cb5;
+    border-radius: 16px;
+    padding: 10px 10px 9px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Khung ảnh thumbnail bên trong thẻ */
+.game-thumb {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #bfe6ff 0%, #e6f6ff 60%, #7cb322 60%, #5a9412 100%);
+}
+
+.game-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hàng dưới cùng của thẻ: Icon Bookmark + Nút Game */
+.game-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-bookmark {
+    background: none;
+    border: none;
+    color: #0b1663;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease;
+}
+
+.btn-bookmark:active {
+    transform: scale(0.85);
+}
+
+.btn-play-game {
+    flex: 1;
+    background-color: #283696;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 0;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+    transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.btn-play-game:active {
+    transform: scale(0.95);
+    background-color: #1d2875;
+}
+

@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="ranking.css">
     <!-- CSS benefit -->
     <link rel="stylesheet" href="benefit.css">
+    <!-- CSS game -->
+    <link rel="stylesheet" href="game.css">
+    <!-- CSS background -->
+    <link rel="stylesheet" href="background.css">
 </head>
 <body>
     <!-- Màn hình chờ mở đầu (Splash Screen) -->
@@ -223,6 +227,31 @@
                 <span>Shop</span>
             </div>
         </footer>
+
+        <!-- MÀN HÌNH GAME -->
+        <div id="game-screen" class="game-screen hidden">
+            <div class="game-top-bar">
+                <button id="btn-close-game" class="game-back-btn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+            </div>
+
+            <!-- Thanh Tabs: Game & Your game -->
+            <div class="game-tabs">
+                <button class="game-tab-btn active" data-gametab="all-games">Game</button>
+                <button class="game-tab-btn" data-gametab="your-games">Your game</button>
+            </div>
+
+            <!-- Nội dung Tab 1: Game -->
+            <div id="tab-all-games" class="game-tab-pane active">
+                <div class="game-grid" id="all-games-grid"></div>
+            </div>
+
+            <!-- Nội dung Tab 2: Your game -->
+            <div id="tab-your-games" class="game-tab-pane">
+                <div class="game-grid" id="your-games-grid"></div>
+            </div>
+        </div>
     </div>
 
         <!-- Màn hình Cài đặt -->
@@ -237,7 +266,7 @@
             <div class="settings-content">
                 <div class="settings-group">
                     <div class="group-title">INTERFACE</div>
-                    <div class="setting-row"><span>Background</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                    <div id="btn-open-background" class="setting-row"><span>Background</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
                     <div class="setting-row"><span>Mode</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
                 </div>
 
@@ -262,6 +291,30 @@
             </div>
 
             <div class="settings-watermark">ZYJEWVIE</div>
+
+            <!-- MÀN HÌNH HÌNH NỀN (BACKGROUND) -->
+            <div id="background-screen" class="background-screen hidden">
+                <div class="bg-header">
+                    <button id="btn-close-background" class="btn-back">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <h1 class="bg-title">Hình nền</h1>
+                </div>
+
+                <div class="bg-body">
+                    <!-- Khối 1: Màu nền (Cuộn ngang) -->
+                    <div class="bg-section">
+                        <h2 class="bg-section-title">Màu nền</h2>
+                        <div class="bg-color-scroll" id="bg-color-list"></div>
+                    </div>
+
+                    <!-- Khối 2: Nhân vật (Lưới 3 cột) -->
+                    <div class="bg-section">
+                        <h2 class="bg-section-title">Nhân vật</h2>
+                        <div class="bg-character-grid" id="bg-character-list"></div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <!-- MÀN HÌNH PROFILE (TRƯỢT RA) -->
@@ -334,12 +387,6 @@
             </div>
         </div>
 
-        <!-- MÀN HÌNH RANKING -->
-        <div id="ranking-screen" class="ranking-screen hidden">
-            <div class="shop-title">BẢNG XẾP HẠNG (RANKING)</div>
-            <div style="color: white; text-align: center; margin-top: 50px;">Nội dung trang Ranking đang cập nhật...</div>
-        </div>
-
 
 
     <!-- JS xử lý ẩn màn hình chờ -->
@@ -360,5 +407,9 @@
     <script src="ranking.js"></script>
     <!-- JS benefits -->
     <script src="benefit.js"></script>
+    <!-- JS game -->
+    <script src="game.js"></script>
+    <!-- JS background -->
+    <script src="background.js"></script>
 </body>
 </html>
