@@ -31,6 +31,8 @@
     <link rel="stylesheet" href="background.css">
     <!-- CSS Background Music -->
     <link rel="stylesheet" href="bgm.css">
+    <!-- CSS Stage -->
+    <link rel="stylesheet" href="stage.css">
 </head>
 <body>
     <!-- Màn hình chờ mở đầu (Splash Screen) -->
@@ -80,7 +82,7 @@
             <img class="character-img" src="anh3.png" alt="Character">
            
             <div class="action-buttons">
-                <button class="action-btn btn-stage">
+                <button id="btn-open-stage" class="action-btn btn-stage">
                     <span>Stage</span>
                 </button>
                 <button class="action-btn btn-game">
@@ -254,10 +256,32 @@
                 <div class="game-grid" id="your-games-grid"></div>
             </div>
         </div>
+
+        <!-- MÀN HÌNH CHỌN CA SĨ BIỂU DIỄN (STAGE) -->
+        <div id="stage-screen" class="stage-screen hidden">
+            <div class="stage-header">
+                <button id="btn-close-stage" class="btn-back">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <h1 class="stage-title">Chọn ca sĩ biểu diễn</h1>
+            </div>
+
+            <!-- Khu vực danh sách ca sĩ & thẻ thêm -->
+            <div class="stage-body">
+                <div class="stage-grid" id="stage-character-grid"></div>
+            </div>
+
+            <!-- Nút Vào biểu diễn -->
+            <div class="stage-footer-action">
+                <button id="btn-start-performance" class="btn-goto-performance">
+                    Vào biểu diễn <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
     </div>
 
-        <!-- Màn hình Cài đặt -->
-        <div id="settings-modal" class="settings-screen hidden">
+    <!-- Màn hình Cài đặt -->
+    <div id="settings-modal" class="settings-screen hidden">
             <div class="settings-header">
                 <button id="btn-close-settings" class="btn-back">
                     <i class="fa-solid fa-chevron-left"></i>
@@ -350,10 +374,10 @@
                 <!-- Thẻ audio ẩn để phát nhạc thật nếu có file mp3 -->
                 <audio id="bgm-audio-player" loop></audio>
             </div>
-        </div>
+    </div>
         
-        <!-- MÀN HÌNH PROFILE (TRƯỢT RA) -->
-        <div id="profile-screen" class="profile-screen hidden">
+    <!-- MÀN HÌNH PROFILE (TRƯỢT RA) -->
+    <div id="profile-screen" class="profile-screen hidden">
             <!-- Header xanh đậm phía trên -->
             <div class="profile-top-banner">
                 <button id="btn-close-profile" class="btn-back">
@@ -420,7 +444,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
 
 
 
@@ -448,5 +472,7 @@
     <script src="background.js"></script>
     <!-- JS background music -->
     <script src="bgm.js"></script>
+    <!-- JS stage -->
+    <script src="stage.js"></script>
 </body>
 </html>

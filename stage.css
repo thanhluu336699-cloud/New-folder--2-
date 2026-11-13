@@ -1,0 +1,174 @@
+/* --- STAGE SCREEN STYLES --- */
+.stage-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #5d84f2 0%, #7d9ef7 45%, #9eb7fb 100%);
+    z-index: 110;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    transform: translateX(0);
+    transition: transform 0.25s cubic-bezier(0.1, 0.9, 0.2, 1), visibility 0.25s;
+    visibility: visible;
+}
+
+.stage-screen.hidden {
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Header: < Chọn ca sĩ biểu diễn */
+.stage-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 20px 14px 20px;
+}
+
+.stage-header .btn-back {
+    position: static;
+    background: none;
+    border: none;
+    font-size: 26px;
+    font-weight: 900;
+    color: #0b1670;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.stage-title {
+    font-size: 22px;
+    font-weight: 900;
+    color: #0b1670;
+    margin: 0;
+}
+
+/* Thân chứa lưới ca sĩ */
+.stage-body {
+    flex: 1;
+    padding: 10px 20px;
+    overflow-y: auto;
+}
+
+.stage-body::-webkit-scrollbar {
+    display: none;
+}
+
+.stage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 14px;
+    padding-bottom: 20px;
+}
+
+/* Thẻ ca sĩ */
+.stage-card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.stage-card-thumb {
+    width: 100%;
+    aspect-ratio: 3 / 3.4;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(180deg, #bfe6ff 0%, #e6f6ff 62%, #7cb322 62%, #5a9412 100%);
+    border: 2px solid transparent;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s ease, border-color 0.2s ease;
+}
+
+.stage-card-item:active .stage-card-thumb {
+    transform: scale(0.95);
+}
+
+.stage-card-item.selected .stage-card-thumb {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px #1a237e;
+}
+
+.stage-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Nhãn tên ca sĩ */
+.stage-card-name {
+    width: 100%;
+    background-color: #5b69d6;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+    padding: 5px 4px;
+    border-radius: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stage-card-item.selected .stage-card-name {
+    background-color: #283696;
+}
+
+/* Thẻ dấu cộng (+) để thêm ca sĩ */
+.stage-add-card {
+    width: 100%;
+    aspect-ratio: 3 / 3.4;
+    background-color: #4a6ec5;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a237e;
+    font-size: 28px;
+    font-weight: 900;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.stage-add-card:active {
+    transform: scale(0.95);
+    background-color: #3b5aa8;
+}
+
+/* Phần footer nút Vào biểu diễn */
+.stage-footer-action {
+    padding: 14px 20px 24px 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-goto-performance {
+    background: none;
+    border: none;
+    color: #0b1670;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    transition: transform 0.15s ease;
+}
+
+.btn-goto-performance:active {
+    transform: scale(0.95);
+}
+
