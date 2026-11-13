@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="game.css">
     <!-- CSS background -->
     <link rel="stylesheet" href="background.css">
+    <!-- CSS Background Music -->
+    <link rel="stylesheet" href="bgm.css">
 </head>
 <body>
     <!-- Màn hình chờ mở đầu (Splash Screen) -->
@@ -272,7 +274,7 @@
 
                 <div class="settings-group">
                     <div class="group-title">AUDIO</div>
-                    <div class="setting-row"><span>Background Music</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
+                    <div id="btn-open-bgm" class="setting-row"><span>Background Music</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
                     <div class="setting-row"><span>Sound Effects</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
                     <div class="setting-row"><span>Notifications</span><i class="fa-solid fa-chevron-right arrow-icon"></i></div>
                 </div>
@@ -314,6 +316,39 @@
                         <div class="bg-character-grid" id="bg-character-list"></div>
                     </div>
                 </div>
+            </div>
+            <!-- MÀN HÌNH BACKGROUND MUSIC -->
+            <div id="bgm-screen" class="bgm-screen hidden">
+                <div class="bgm-header">
+                    <button id="btn-close-bgm" class="btn-back">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <h1 class="bgm-title">Background music</h1>
+                </div>
+
+                <!-- Thanh gạt Bật / Tắt -->
+                <div class="bgm-toggle-bar">
+                    <span id="bgm-status-text" class="bgm-status-label">Bật</span>
+                    <label class="bgm-switch">
+                        <input type="checkbox" id="bgm-toggle-checkbox" checked>
+                        <span class="bgm-slider"></span>
+                    </label>
+                </div>
+
+                <!-- Khu vực danh sách Nhạc nền -->
+                <div class="bgm-list-container" id="bgm-list-container">
+                    <h2 class="bgm-section-title">Nhạc nền:</h2>
+                    
+                    <div class="bgm-search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="bgm-search-input" placeholder="">
+                    </div>
+
+                    <div class="bgm-track-list" id="bgm-track-list"></div>
+                </div>
+
+                <!-- Thẻ audio ẩn để phát nhạc thật nếu có file mp3 -->
+                <audio id="bgm-audio-player" loop></audio>
             </div>
         </div>
         
@@ -411,5 +446,7 @@
     <script src="game.js"></script>
     <!-- JS background -->
     <script src="background.js"></script>
+    <!-- JS background music -->
+    <script src="bgm.js"></script>
 </body>
 </html>
