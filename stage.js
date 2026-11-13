@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnStartPerformance = document.getElementById('btn-start-performance');
     const stageGrid = document.getElementById('stage-character-grid');
 
-    // Dữ liệu mẫu danh sách ca sĩ (5 ca sĩ + 1 nút cộng)
+    // Dữ liệu mẫu danh sách ca sĩ (Mặc định chọn ca sĩ đầu tiên)
     const stageSingers = [
         { id: 1, name: "tên ca sĩ", image: "anh3.png", selected: true },
         { id: 2, name: "tên ca sĩ", image: "anh3.png", selected: false },
@@ -50,15 +50,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         stageGrid.innerHTML = html;
 
-        // Xử lý chọn/bỏ chọn ca sĩ
+        // Xử lý chọn duy nhất 1 ca sĩ
         stageGrid.querySelectorAll('.stage-card-item').forEach(item => {
             item.addEventListener('click', () => {
                 const id = Number(item.getAttribute('data-id'));
-                const singer = stageSingers.find(s => s.id === id);
-                if (singer) {
-                    singer.selected = !singer.selected;
-                    renderStageSingers();
-                }
+                
+                stageSingers.forEach(singer => {
+                    singer.selected = (singer.id === id);
+                });
+
+                renderStageSingers();
             });
         });
 
@@ -68,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnAddSinger.addEventListener('click', () => {
                 const newName = prompt("Nhập tên ca sĩ mới:", "tên ca sĩ");
                 if (newName && newName.trim() !== "") {
+                    // Thêm ca sĩ mới và tự động chọn luôn ca sĩ mới thêm nếu muốn, hoặc để false tùy ý
                     stageSingers.push({
                         id: Date.now(),
                         name: newName.trim(),
@@ -85,11 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Xử lý nút "Vào biểu diễn →"
     if (btnStartPerformance) {
         btnStartPerformance.addEventListener('click', () => {
-            const selectedCount = stageSingers.filter(s => s.selected).length;
-            if (selectedCount === 0) {
-                alert("Vui lòng chọn ít nhất một ca sĩ để biểu diễn!");
+            const selectedSinger = stageSingers.find(s => s.selected);
+            if (!selectedSinger) {
+                alert("Vui lòng chọn một ca sĩ để biểu diễn!");
             } else {
-                alert(`Đang vào sân khấu biểu diễn với ${selectedCount} ca sĩ đã chọn!`);
+                alert(`Đang vào sân khấu biểu diễn với ca sĩ: ${selectedSinger.name}!`);
             }
         });
     }
