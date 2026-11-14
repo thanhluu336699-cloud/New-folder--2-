@@ -67,16 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnAddSinger = document.getElementById('btn-add-singer');
         if (btnAddSinger) {
             btnAddSinger.addEventListener('click', () => {
-                const newName = prompt("Nhập tên ca sĩ mới:", "tên ca sĩ");
-                if (newName && newName.trim() !== "") {
-                    // Thêm ca sĩ mới và tự động chọn luôn ca sĩ mới thêm nếu muốn, hoặc để false tùy ý
-                    stageSingers.push({
-                        id: Date.now(),
-                        name: newName.trim(),
-                        image: "anh3.png",
-                        selected: false
-                    });
-                    renderStageSingers();
+                const createCharScreen = document.getElementById('create-character-screen');
+                if (createCharScreen) {
+                    createCharScreen.classList.remove('hidden');
                 }
             });
         }
@@ -95,5 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    window.addNewStageSinger = (singerObj) => { 
+        stageSingers.push(singerObj); renderStageSingers(); 
+    };
+
 });
 

@@ -1,0 +1,205 @@
+/* --- MÀN HÌNH TẠO NHÂN VẬT --- */
+.create-char-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #5d84f2 0%, #7396f6 45%, #84a4f8 100%);
+    z-index: 115; /* Nằm đè lên màn hình Stage (z-index: 110) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+
+    transform: translateX(0);
+    transition: transform 0.25s cubic-bezier(0.1, 0.9, 0.2, 1), visibility 0.25s;
+    visibility: visible;
+}
+
+.create-char-screen.hidden {
+    transform: translateX(100%);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Header trên cùng */
+.create-char-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 10px 20px;
+}
+
+.create-char-header .btn-back {
+    position: static;
+    background: none;
+    border: none;
+    font-size: 28px;
+    font-weight: 900;
+    color: #0b1670;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.btn-create-submit {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 900;
+    color: #0b1670;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: transform 0.12s ease;
+}
+
+.btn-create-submit:active {
+    transform: scale(0.92);
+}
+
+/* Khung xem trước ở giữa màn hình */
+.create-char-preview-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 20px 50px 20px;
+    min-height: 0;
+}
+
+.create-char-preview-box {
+    height: 100%;
+    min-height: 450px;
+    min-width: 30px;
+    aspect-ratio: 3 / 4.2;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+
+}
+
+.create-char-preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.7);
+    transform-origin: center center;
+    display: block;
+}
+
+/* Khung Bottom Sheet chứa Tab và Lưới 4 cột */
+.create-char-bottom-sheet {
+    height: 36%;
+    min-height: 230px;
+    background-color: #3668b3;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Thanh Tabs: Ca sĩ | Trang Phục */
+.create-char-tabs {
+    display: flex;
+    background-color: #4a82c9;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+}
+
+.cc-tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    padding: 11px 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cc-tab-btn.active {
+    background-color: #283696;
+    border-radius: 16px;
+}
+
+/* Khu vực cuộn lưới 4 cột */
+.create-char-grid-container {
+    flex: 1;
+    padding: 14px 14px 16px 14px;
+    overflow-y: auto;
+}
+
+.create-char-grid-container::-webkit-scrollbar {
+    display: none;
+}
+
+.cc-grid {
+    display: none;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px 10px;
+}
+
+.cc-grid.active {
+    display: grid;
+}
+
+/* Từng ô item trong lưới 4 cột */
+.cc-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.cc-item-thumb {
+    width: 100%;
+    aspect-ratio: 3 / 3.8;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: transform 0.12s ease, border-color 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 4px 13px 4px;
+
+}
+
+.cc-item:active .cc-item-thumb {
+    transform: scale(0.94);
+}
+
+.cc-item.selected .cc-item-thumb {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px #212981;
+}
+
+.cc-item-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.4);
+    transform-origin: center center;
+    display: block;
+}
+
+.cc-item-name {
+    width: 100%;
+    color: #ffffff;
+    font-size: 11.5px;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+

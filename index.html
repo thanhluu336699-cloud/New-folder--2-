@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="bgm.css">
     <!-- CSS Stage -->
     <link rel="stylesheet" href="stage.css">
+    <!-- CSS create character -->
+    <link rel="stylesheet" href="create_character.css">
 </head>
 <body>
     <!-- Màn hình chờ mở đầu (Splash Screen) -->
@@ -277,6 +279,73 @@
                     Vào biểu diễn <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
+
+                    <!-- MÀN HÌNH TẠO NHÂN VẬT (CREATE CHARACTER) -->
+        <div id="create-character-screen" class="create-char-screen hidden">
+            <!-- Header: Nút Back (<) bên trái và chữ "Tạo" bên phải -->
+            <div class="create-char-header">
+                <button id="btn-close-create-char" class="btn-back">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="btn-confirm-create-char" class="btn-create-submit">Tạo</button>
+            </div>
+
+            <!-- Khung Preview Nhân Vật ở giữa -->
+            <div class="create-char-preview-wrapper">
+                <div class="create-char-preview-box">
+                    <img id="create-char-preview-img" src="" alt="Preview" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Khu vực chọn phía dưới (Tabs + Lưới 4 cột) -->
+            <div class="create-char-bottom-sheet">
+                <div class="create-char-tabs">
+                    <button class="cc-tab-btn active" data-cctab="singers">Ca sĩ</button>
+                    <button class="cc-tab-btn" data-cctab="outfits">Trang Phục</button>
+                </div>
+
+                <div class="create-char-grid-container">
+                    <!-- Lưới Tab Ca sĩ -->
+                    <div id="cc-grid-singers" class="cc-grid active"></div>
+                    <!-- Lưới Tab Trang Phục -->
+                    <div id="cc-grid-outfits" class="cc-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <!-- MÀN HÌNH TẠO NHÂN VẬT (CREATE CHARACTER) -->
+        <div id="create-character-screen" class="create-char-screen hidden">
+            <!-- Header: Nút Back (<) bên trái và chữ "Tạo" bên phải -->
+            <div class="create-char-header">
+                <button id="btn-close-create-char" class="btn-back">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="btn-confirm-create-char" class="btn-create-submit">Tạo</button>
+            </div>
+
+            <!-- Khung Preview Nhân Vật ở giữa -->
+            <div class="create-char-preview-wrapper">
+                <div class="create-char-preview-box">
+                    <img id="create-char-preview-img" src="" alt="Preview" style="display: none;">
+                </div>
+            </div>
+
+            <!-- Khu vực chọn phía dưới (Tabs + Lưới 4 cột) -->
+            <div class="create-char-bottom-sheet">
+                <div class="create-char-tabs">
+                    <button class="cc-tab-btn active" data-cctab="singers">Ca sĩ</button>
+                    <button class="cc-tab-btn" data-cctab="outfits">Trang Phục</button>
+                </div>
+
+                <div class="create-char-grid-container">
+                    <!-- Lưới Tab Ca sĩ -->
+                    <div id="cc-grid-singers" class="cc-grid active"></div>
+                    <!-- Lưới Tab Trang Phục -->
+                    <div id="cc-grid-outfits" class="cc-grid"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -474,5 +543,7 @@
     <script src="bgm.js"></script>
     <!-- JS stage -->
     <script src="stage.js"></script>
+    <!-- JS create_character -->
+    <script src="create_character.js"></script>
 </body>
 </html>
